@@ -1,0 +1,17 @@
+//
+//  TestMR2_3_3-Prefix.pch
+//  TestMR2_3_3
+//
+//  Created by Richard Wylie on 28/07/2014.
+//  Copyright (c) 2014 sigmundfridge. All rights reserved.
+//
+
+#ifndef TestMR2_3_3_TestMR2_3_3_Prefix_pch
+#define TestMR2_3_3_TestMR2_3_3_Prefix_pch
+
+#import "CoreData+MagicalRecord.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
