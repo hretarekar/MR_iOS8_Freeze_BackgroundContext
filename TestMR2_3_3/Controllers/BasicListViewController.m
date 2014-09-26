@@ -81,24 +81,23 @@
     testVC.delegate = self;
 }
 
-- (void) callBack {
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0),^{
-        
-        //do bunch of things on background thread. Application logic
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_context];
-        NSPredicate *p=[NSPredicate predicateWithFormat:@"uuid == %@", @"1"];
+- (void)callBack
+{
+    //do bunch of things on background thread. Application logic
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_context];
+
+    [context performBlock:^{
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"uuid == %@", @"1"];
         Test1 *test = [Test1 MR_findFirstWithPredicate:p inContext:context];
+
         if(test) {
-            
             NSString *randomString = [BasicListViewController randomStringOfLength:10];
             test.fName = [NSString stringWithFormat:@"ChangedFirstName_%@", randomString];
             [context MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-                
                 [self.listingTableView reloadData];
             }];
         }
-    });
+    }];
 }
 
 +(NSString*)randomStringOfLength:(int)length {
