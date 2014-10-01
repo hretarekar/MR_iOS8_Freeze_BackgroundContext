@@ -35,7 +35,6 @@
 */
 
 - (void)doneButtonClicked:(id)sender {
-    [self.delegate callBack];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

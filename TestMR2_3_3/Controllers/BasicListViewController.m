@@ -31,7 +31,17 @@
 {
     [super viewWillAppear:animated];
     // Do any additional setup after loading the view.
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_context];
+    
+    [context performBlock:^{
+        Test1 *output = [Test1 MR_createEntityInContext:context];
+        NSString *fNameStr = [BasicListViewController randomStringOfLength:10];
+        output.fName = fNameStr;
+        [context MR_saveToPersistentStoreWithCompletion:NULL];
+    }];
+    
     [self updateFRC];
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -75,30 +85,6 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    TestViewController * testVC = segue.destinationViewController;
-    testVC.delegate = self;
-}
-
-- (void)callBack
-{
-    //do bunch of things on background thread. Application logic
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_context];
-
-    [context performBlock:^{
-        NSPredicate *p = [NSPredicate predicateWithFormat:@"uuid == %@", @"1"];
-        Test1 *test = [Test1 MR_findFirstWithPredicate:p inContext:context];
-
-        if(test) {
-            NSString *randomString = [BasicListViewController randomStringOfLength:10];
-            test.fName = [NSString stringWithFormat:@"ChangedFirstName_%@", randomString];
-            [context MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-                [self.listingTableView reloadData];
-            }];
-        }
-    }];
-}
 
 +(NSString*)randomStringOfLength:(int)length {
     static NSString *letters = @"abcdefghijlmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

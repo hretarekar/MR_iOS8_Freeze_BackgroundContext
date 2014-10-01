@@ -8,13 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol TestViewControllerDelegate <NSObject>
-
-- (void) callBack;
-@end
-
 @interface TestViewController : UIViewController
 - (IBAction)doneButtonClicked:(id)sender;
 
-@property (assign, atomic) id<TestViewControllerDelegate> delegate;
 @end

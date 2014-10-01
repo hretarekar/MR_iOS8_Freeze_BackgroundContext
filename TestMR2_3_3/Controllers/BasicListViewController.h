@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TestViewController.h"
 
-@interface BasicListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TestViewControllerDelegate>
+@interface BasicListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic) BOOL multipleCalls;
 @property (nonatomic, assign) IBOutlet UITableView *listingTableView;
 @end

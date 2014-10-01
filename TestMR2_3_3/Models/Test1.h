@@ -12,8 +12,6 @@
 
 @interface Test1 : NSManagedObject
 
-@property (nonatomic, retain) NSString * uuid;
 @property (nonatomic, retain) NSString * fName;
-@property (nonatomic, retain) NSString * lName;
 
 @end

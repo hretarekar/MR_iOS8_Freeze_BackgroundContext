@@ -42,7 +42,7 @@
 		92A2BE98198689AB00430ACC /* Test1.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BE97198689AB00430ACC /* Test1.m */; };
 		92A2BE9F19868AFA00430ACC /* Test1+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BE9E19868AFA00430ACC /* Test1+Custom.m */; };
 		92A2BEA6198690F600430ACC /* BasicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BEA5198690F600430ACC /* BasicListViewController.m */; };
-		F4ED6C4919D193CF0080297E /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED6C4819D193CF0080297E /* TestViewController.m */; };
+		F4BA20EF19DC098F00D97E43 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BA20EE19DC098F00D97E43 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,8 +118,8 @@
 		92A2BE9E19868AFA00430ACC /* Test1+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Test1+Custom.m"; path = "Models/Categories/Test1+Custom.m"; sourceTree = "<group>"; };
 		92A2BEA4198690F600430ACC /* BasicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicListViewController.h; path = Controllers/BasicListViewController.h; sourceTree = "<group>"; };
 		92A2BEA5198690F600430ACC /* BasicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicListViewController.m; path = Controllers/BasicListViewController.m; sourceTree = "<group>"; };
-		F4ED6C4719D193CF0080297E /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = Controllers/TestViewController.h; sourceTree = "<group>"; };
-		F4ED6C4819D193CF0080297E /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = Controllers/TestViewController.m; sourceTree = "<group>"; };
+		F4BA20ED19DC098F00D97E43 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = Controllers/TestViewController.h; sourceTree = "<group>"; };
+		F4BA20EE19DC098F00D97E43 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = Controllers/TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,10 +318,10 @@
 		92A2BEA31986906B00430ACC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA20ED19DC098F00D97E43 /* TestViewController.h */,
+				F4BA20EE19DC098F00D97E43 /* TestViewController.m */,
 				92A2BEA4198690F600430ACC /* BasicListViewController.h */,
 				92A2BEA5198690F600430ACC /* BasicListViewController.m */,
-				F4ED6C4719D193CF0080297E /* TestViewController.h */,
-				F4ED6C4819D193CF0080297E /* TestViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -407,13 +407,13 @@
 				92A2BE841986865A00430ACC /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				92A2BE191986862E00430ACC /* AppDelegate.m in Sources */,
 				92A2BE8C1986865A00430ACC /* MagicalRecord+ShorthandSupport.m in Sources */,
-				F4ED6C4919D193CF0080297E /* TestViewController.m in Sources */,
 				92A2BE7D1986865A00430ACC /* NSManagedObject+MagicalFinders.m in Sources */,
 				92A2BE801986865A00430ACC /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				92A2BE7E1986865A00430ACC /* NSManagedObject+MagicalRecord.m in Sources */,
 				92A2BE821986865A00430ACC /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				92A2BE98198689AB00430ACC /* Test1.m in Sources */,
 				92A2BEA6198690F600430ACC /* BasicListViewController.m in Sources */,
+				F4BA20EF19DC098F00D97E43 /* TestViewController.m in Sources */,
 				92A2BE851986865A00430ACC /* NSPersistentStore+MagicalRecord.m in Sources */,
 				92A2BE8B1986865A00430ACC /* MagicalRecord+Setup.m in Sources */,
 				92A2BE761986865A00430ACC /* NSEntityDescription+MagicalDataImport.m in Sources */,

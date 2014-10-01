@@ -21,43 +21,24 @@
     // Override point for customization after application launch.
     [MagicalRecord setLoggingLevel:MagicalRecordLoggingLevelVerbose];
     [MagicalRecord setupCoreDataStack];
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"uuid != nil"];
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
-        [Test1 MR_deleteAllMatchingPredicate:p inContext:localContext];
+        [Test1 MR_deleteAllMatchingPredicate:nil inContext:localContext];
         
     }completion:^(BOOL success, NSError *error) {
     }];
     
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
-        [self createEntityWithUuid:@"1" inContext:localContext];
-        [self createEntityWithUuid:@"2" inContext:localContext];
-        [self createEntityWithUuid:@"3" inContext:localContext];
-        [self createEntityWithUuid:@"4" inContext:localContext];
-        [self createEntityWithUuid:@"5" inContext:localContext];
-        [self createEntityWithUuid:@"6" inContext:localContext];
-        [self createEntityWithUuid:@"7" inContext:localContext];
-        [self createEntityWithUuid:@"8" inContext:localContext];
-        [self createEntityWithUuid:@"1" inContext:localContext];
-        [self createEntityWithUuid:@"1" inContext:localContext];
-        
+        for(int i=0; i < 10; i++) {
+            Test1 *output = [Test1 MR_createEntityInContext:localContext];
+            NSString *fNameStr = [AppDelegate randomStringOfLength:10];
+            output.fName = fNameStr;
+        }
     }completion:^(BOOL success, NSError *error) {
     }];
     return YES;
 
-}
-
-- (void) createEntityWithUuid:(NSString *)uuidStr inContext:(NSManagedObjectContext*)context {
-
-    Test1 *output = [Test1 MR_createEntityInContext:context];
-    output.uuid = uuidStr;
-    
-    NSString *fNameStr = [AppDelegate randomStringOfLength:10];
-    NSString *lNameStr = [AppDelegate randomStringOfLength:10];
-    
-    output.fName = fNameStr;
-    output.lName = lNameStr;
 }
 
 +(NSString*)randomStringOfLength:(int)length {

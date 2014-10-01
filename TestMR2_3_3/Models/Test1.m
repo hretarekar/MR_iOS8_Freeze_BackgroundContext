@@ -11,8 +11,6 @@
 
 @implementation Test1
 
-@dynamic uuid;
 @dynamic fName;
-@dynamic lName;
 
 @end
